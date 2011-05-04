@@ -1,0 +1,18 @@
+A simple vector model information retrieval system with an optional Rocchio query feedback mechanism.
+
+Searches text files for given terms, returning a ranked list of relevant documents. Also prints precision at rank, precision at recall and average precision metrics. Data structures are serialized to disk for better performance.
+
+Relevant papers:
+G. Salton , A. Wong , C. S. Yang, A vector space model for automatic indexing, Communications of the ACM, v.18 n.11, p.613-620, Nov. 1975
+J.J. Rocchio, Relevance feedback in information retrieval (pp. 313–323), Prentice Hall, Englewood Cliffs, NJ (1971).
+
+Program expects the following file structures:
+data/docs: txt-files with unique names
+data/doc_lengths.txt: filename normalized_doc_length]
+data/index.txt: term doc_freq doc_1 term_freq_1 doc_2 term_freq_2 ...
+data/relevant.txt: filename
+data/feedback.txt: filename [1=relevant/0=not relevant]
+data/relevant.txt: filename
+
+Run with:
+java VectorSearch -q Search Terms [-f .txt-file with feedback]
